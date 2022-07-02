@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&family=The+Nautigal&display=swap"
+        rel="stylesheet">
+    <title>pract 14-DOM-Quotes Generator</title>
+    <style>
+        body {
+            background-color: #F7E2D6;
+        }
+
+        #frame {
+            display: inline-block;
+            width: 60%;
+            padding: 5%;
+            margin: 5%;
+            background-color: #DFBB9D;
+        }
+
+        blockquote span {
+            font-size: 6rem;
+        }
+
+        blockquote {
+            font-size: 2.4rem;
+            color: white;
+        }
+
+        #aut {
+            text-align: right;
+            color: white;
+            font-size: 1.3rem;
+            font-family: 'The Nautigal', cursive;
+            margin-top: 0;
+        }
+
+        button {
+            position: absolute;
+            top: 30%;
+            right: 13%;
+            padding: 10px;
+            background-image: linear-gradient(to top right, #F7E2D6, #edcebd, #ebba9d, #ecaa39);
+            border: solid 5px #ecc4a3;
+            box-shadow: #edae0f;
+        }
+
+        button:hover,
+        button:active {
+            transform: translateY(5px);
+            transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
+        button:active {
+            animation: dab 0.3s;
+        }
+
+        @keyframes dab {
+            100% {
+                transform: translateY(2px);
+                font-size: x-small;
+                box-shadow: solid 10px #ebba9d;
+            }
+        }
+
+        quote {
+            font-family: 'Lato', sans-serif;
+            word-spacing: 10px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="frame">
+        <blockquote> <span>“</span>
+            <quote> .</quote>
+        </blockquote>
+        <br>
+        <p id="aut">- </p>
+    </div>
+    <button onclick="newQuote()">New Quote</button>
+    <script>
+
+        const quotes = [
+            { quote: "Get busy living or get busy dying.", author: 'Stephen King' },
+            { quote: "The whole secret of a successful life is to find out what is one’s destiny to do, and then do it", author: "Henry Ford" },
+            { quote: "Life is a succession of lessons which must be lived to be understood", author: "Helen Keller" },
+            { quote: "Life is ten percent what happens to you and ninety percent how you respond to it", author: "Charles Swindoll" },
+            { quote: "Life’s tragedy is that we get old too soon and wise too late", author: "Benjamin Franklin" },
+            { quote: "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe", author: "Albert Einstein" },
+            { quote: "Be the change that you wish to see in the world", author: "Mahatma Gandhi" },
+            { quote: "If you want to know what a man's like, take a good look at how he treats his inferiors, not his equals", author: "J.K. Rowling, Harry Potter and the Goblet of Fire" },
+            { quote: "Live as if you were to die tomorrow. Learn as if you were to live forever", author: "Mahatma Gandhi" },
+            { quote: "Keep your face always toward the sunshine, and shadows will fall behind you", author: "walt whitmann" },
+            { quote: "The harder you work for something, the greater you feel when you achieve it", author: "Unknown" },
+            { quote: "Challenges are what makes life interesting and overcoming them is what makes life meaningful", author: "Joshua Marine" },
+            { quote: "A smooth sea never make a skilled sailor", author: "Franklin d. Rossevelt" },
+            { quote: "You have to be odd to be number one", author: "Dr. Seuss" },
+            { quote: "Practice like you've never won, play like you have never lost", author: "Alex Morgan" },
+            { quote: "Forget the mistake. Remember the lesson.", author: "unknown" },
+            { quote: "One best book is equal to a hundred good friends, but one good friend is equal to a library", author: "Abdul Kalam" },
+            { quote: "If your actions inspire others to dream more, learn more,do more and become more, you are a leader", author: "John Quincy Adams" },
+            { quote: "Success is how high you bounce when you hit the bottom", author: "General George Patton" },
+            { quote: "An Investment in knowledge always pays the best interest", author: "unknown" },
+            { quote: "Even if you are on right track, you'ill get run over if you just sit there.", author: "Will Rogers" },
+            { quote: "If you want to shine like a sun, first burn like a sun", author: "A.P.J. Abdul Kalam" }
+        ];
+        var n1 = quotes.length;
+        var i1 = Math.floor(Math.random() * n1 + 1);
+        document.querySelector("quote").innerText = quotes[i1].quote;
+        document.getElementById("aut").innerText = "-" + quotes[i1].author;
+
+        function newQuote() {
+            var n = quotes.length;
+            var i = Math.floor(Math.random() * n + 1);
+            document.querySelector("quote").innerText = quotes[i].quote;
+            document.getElementById("aut").innerText = "-" + quotes[i].author;
+        }
+    </script>
+</body>
+
+</html>
