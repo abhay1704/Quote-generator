@@ -113,13 +113,13 @@
             { quote: "If you want to shine like a sun, first burn like a sun", author: "A.P.J. Abdul Kalam" }
         ];
         var n1 = quotes.length;
-        var i1 = Math.floor(Math.random() * n1 + 1);
+        var i1 = Math.floor(Math.random() * n1 );
         document.querySelector("quote").innerText = quotes[i1].quote;
         document.getElementById("aut").innerText = "-" + quotes[i1].author;
 
         function newQuote() {
             var n = quotes.length;
-            var i = Math.floor(Math.random() * n + 1);
+            var i = Math.floor(Math.random() * n );
             document.querySelector("quote").innerText = quotes[i].quote;
             document.getElementById("aut").innerText = "-" + quotes[i].author;
         }
